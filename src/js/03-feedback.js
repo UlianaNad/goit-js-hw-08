@@ -15,10 +15,19 @@ function onFormSubmit(e) {
     
     const newUser = null ? undefined : JSON.parse(user);
 
-    console.log(newUser);
-    e.currentTarget.reset();
+    if(refs.form.elements.email.value !== "" && refs.form.elements.message.value !== ""){
+
+      console.log(newUser);
+      e.currentTarget.reset();
+     
+      localStorage.clear();
+
+    } else {
+
+    alert("Fill all fields!");
+    
+    }
    
-    localStorage.clear();
 }
 
 function onFormInput() {
