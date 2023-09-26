@@ -21,7 +21,7 @@ function onFormSubmit(e) {
     localStorage.clear();
 }
 
-function onFormInput(e) {
+function onFormInput() {
       const userFeedback = {
         email: refs.form.elements.email.value,
         message: refs.message.value
@@ -29,6 +29,7 @@ function onFormInput(e) {
       
     localStorage.setItem(localStorageKey, JSON.stringify(userFeedback));
 }
+
 
 const onFormInputTrottled = throttle(onFormInput, 500);
 
